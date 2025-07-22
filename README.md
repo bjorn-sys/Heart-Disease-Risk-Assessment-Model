@@ -1,197 +1,195 @@
 # Heart-Disease-Risk-Assessment-Model
 
-❤️ Heart Disease Prediction with Machine Learning
-
-📊 Project Overview
-
+# ❤️ Heart Disease Prediction with Machine Learning
+---
+# 📊 Project Overview
+---
 Heart disease is the leading cause of death globally. Early identification of patients at risk allows for timely interventions, lifestyle adjustments, and improved patient outcomes. This project builds a machine learning pipeline to predict the likelihood of heart disease based on clinical indicators.
 
 Using a cleaned dataset of 602 patients and 14 clinical features, several models were built and evaluated. The Random Forest Classifier demonstrated the best performance and was deployed as the final model.
+---
+# 🌐 Features Used
 
-🌐 Features Used
+**Feature :**
 
-Feature
+**Description**
 
-Description
+**age :**
 
-Risk Impact
+* Age of patient
 
-age
+* Risk increases with age due to arterial stiffness and heart strain
 
-Age of patient
+**sex :**
 
-Risk increases with age due to arterial stiffness and heart strain
+* 1 = male, 0 = female
 
-sex
+* Males are generally at higher risk before menopause
 
-1 = male, 0 = female
+**cp :**
 
-Males are generally at higher risk before menopause
+* Chest pain type (0-3)
 
-cp
+* Asymptomatic and typical angina are stronger indicators of risk
 
-Chest pain type (0-3)
+**trestbps :**
 
-Asymptomatic and typical angina are stronger indicators of risk
+* Resting blood pressure
 
-trestbps
+* >130 mmHg indicates elevated risk
 
-Resting blood pressure
+**chol :**
 
->130 mmHg indicates elevated risk
+* Cholesterol in mg/dl
 
-chol
+* >240 mg/dl is a red flag
 
-Cholesterol in mg/dl
+**fbs :**
 
->240 mg/dl is a red flag
+* Fasting blood sugar >120 mg/dl (1 = true, 0 = false)
 
-fbs
+* Indicates diabetes, a major risk factor
 
-Fasting blood sugar >120 mg/dl (1 = true, 0 = false)
+**restecg :**
 
-Indicates diabetes, a major risk factor
+* Resting ECG results (0-2)
 
-restecg
+* Abnormalities suggest past or ongoing cardiac issues
 
-Resting ECG results (0-2)
+**thalachh :**
 
-Abnormalities suggest past or ongoing cardiac issues
+* Max heart rate achieved
 
-thalachh
+* Low values may signal heart weakness
 
-Max heart rate achieved
+**exang :**
 
-Low values may signal heart weakness
+* Exercise-induced angina (1 = yes, 0 = no)
 
-exang
+* Positive result indicates ischemia
 
-Exercise-induced angina (1 = yes, 0 = no)
+**oldpeak :**
 
-Positive result indicates ischemia
+* ST depression
 
-oldpeak
+* Higher values reflect more heart strain
 
-ST depression
+**slope :**
 
-Higher values reflect more heart strain
+* Slope of ST segment
 
-slope
+* Downsloping/flat curves are concerning
 
-Slope of ST segment
+**ca :**
 
-Downsloping/flat curves are concerning
+* Major vessels colored (0-4)
 
-ca
+* More vessels affected indicates higher risk
 
-Major vessels colored (0-4)
+**thal :**
 
-More vessels affected indicates higher risk
+* Thalassemia result (1-3)
 
-thal
+* Fixed or reversible defects indicate serious problems
 
-Thalassemia result (1-3)
+**target :**
 
-Fixed or reversible defects indicate serious problems
+* 1 = heart disease, 0 = no disease
 
-target
+* The outcome variable
+---
+# 📊 Exploratory Data Insights
 
-1 = heart disease, 0 = no disease
+* Age & Gender: Older males had significantly higher risk
 
-The outcome variable
+* Chest Pain (cp): Asymptomatic and typical angina types were most correlated with heart disease
 
-📊 Exploratory Data Insights
+* Exercise Angina (exang): Presence of angina during exercise often signaled positive diagnosis
 
-Age & Gender: Older males had significantly higher risk
-
-Chest Pain (cp): Asymptomatic and typical angina types were most correlated with heart disease
-
-Exercise Angina (exang): Presence of angina during exercise often signaled positive diagnosis
-
-Cholesterol & BP: Moderate predictive power, especially when combined with others
+* Cholesterol & BP: Moderate predictive power, especially when combined with others
 
 Number of vessels colored (ca): Strongest individual predictor
+---
+# 🏃‍♂️ Modeling and Evaluation
 
-🏃‍♂️ Modeling and Evaluation
+**Several models were built:**
 
-Several models were built:
+# 1. Logistic Regression
 
-1. Logistic Regression
+* Accuracy: 0.68
 
-Accuracy: 0.68
+* Precision: 0.66
 
-Precision: 0.66
+* Recall: 0.72
 
-Recall: 0.72
+* F1 Score: 0.69
 
-F1 Score: 0.69
+# 2. Decision Tree
 
-2. Decision Tree
+* Accuracy: 0.74
 
-Accuracy: 0.74
+* ROC AUC: 0.74
 
-ROC AUC: 0.74
+* Precision: 0.73
 
-Precision: 0.73
+* Recall: 0.73
 
-Recall: 0.73
+* F1 Score: 0.73
 
-F1 Score: 0.73
+# 3. XGBoost Classifier
 
-3. XGBoost Classifier
+* Accuracy: 0.73
 
-Accuracy: 0.73
+* ROC AUC: 0.73
 
-ROC AUC: 0.73
+* Precision: 0.70
 
-Precision: 0.70
-
-Recall: 0.78
+* Recall: 0.78
 
 F1 Score: 0.74
+---
+# ⭐ 4. Random Forest (Final Model)
 
-⭐ 4. Random Forest (Final Model)
+* Train Accuracy: 0.89
 
-Train Accuracy: 0.89
+* Test Accuracy: 0.76
 
-Test Accuracy: 0.76
+* Precision: 0.75
 
-Precision: 0.75
+* Recall: 0.78
 
-Recall: 0.78
+* F1 Score: 0.76
 
-F1 Score: 0.76
+* ROC AUC: 0.76
 
-ROC AUC: 0.76
+* Chosen for its balance of performance and generalization, especially after hyperparameter tuning
+---
+# 🚀 Deployment
 
-Chosen for its balance of performance and generalization, especially after hyperparameter tuning
+* A Streamlit web app was created that allows:
 
-🚀 Deployment
+* Manual prediction by filling in patient values
 
-A Streamlit web app was created that allows:
+* Batch prediction via CSV/Excel upload
 
-Manual prediction by filling in patient values
+* Feature explanations and risk guidelines
 
-Batch prediction via CSV/Excel upload
+* Probability output of heart disease risk
+---
+# 💼 Business Recommendations
+---
+* Clinical Decision Support: This model can assist doctors in screening patients, especially in rural or resource-limited settings.
 
-Feature explanations and risk guidelines
+* Early Detection: Individuals at moderate risk can be flagged early and monitored more closely.
 
-Probability output of heart disease risk
+* Public Health Strategy: Use demographic and medical patterns to inform national-level prevention campaigns.
 
-💼 Business Recommendations
+* Insurance & Underwriting: Helps insurers better assess cardiac risk and offer more accurate premium pricing.
 
-Clinical Decision Support: This model can assist doctors in screening patients, especially in rural or resource-limited settings.
+* Integrate with EHR Systems: Automatically flag at-risk patients in hospital systems using real-time lab input.
+---
+# 🎓 Acknowledgments
 
-Early Detection: Individuals at moderate risk can be flagged early and monitored more closely.
+* Dataset was sourced and cleaned from public medical repositories
 
-Public Health Strategy: Use demographic and medical patterns to inform national-level prevention campaigns.
-
-Insurance & Underwriting: Helps insurers better assess cardiac risk and offer more accurate premium pricing.
-
-Integrate with EHR Systems: Automatically flag at-risk patients in hospital systems using real-time lab input.
-
-🎓 Acknowledgments
-
-Dataset was sourced and cleaned from public medical repositories
-
-Libraries used: pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn, streamlit
+* Libraries used: pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn, streamlit

@@ -1,0 +1,16 @@
+# Core Scientific Libraries
+pandas
+numpy
+matplotlib
+seaborn
+
+# Machine Learning Models
+scikit-learn
+xgboost
+imblearn
+
+# Model Saving
+pickle5   # sometimes 'pickle' is built-in, but on some systems pickle5 is needed
+
+# Visualization (optional, often comes with matplotlib)
+# seaborn is already listed above

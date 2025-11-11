@@ -194,5 +194,3 @@ F1 Score: 0.74
 
 * Libraries used: pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn, streamlit
 * 
-
-webpage: https://heart-disease-risk-assessment-model.streamlit.app/
